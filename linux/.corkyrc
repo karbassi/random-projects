@@ -1,0 +1,116 @@
+# UBUNTU-CONKY
+# A comprehensive conky script, configured for use on
+# Ubuntu / Debian Gnome, without the need for any external scripts.
+#
+# Based on conky-jc and the default .conkyrc.
+# INCLUDES:
+# - tail of /var/log/messages
+# - netstat connections to your computer
+#
+# -- Pengo (conky@pengo.us)
+#
+
+# set to yes if you want tormo to be forked in the background
+background no
+cpu_avg_samples 2
+net_avg_samples 2
+
+out_to_console no
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_colour brown
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# fiddle with window
+use_spacer yes
+use_xft no
+
+# Update interval in seconds
+update_interval 2
+
+# Minimum size of text area
+# minimum_size 250 5
+
+# Draw shades?
+draw_shades no
+draw_borders no
+
+# Text stuff
+draw_outline no # amplifies text if yes
+draw_borders no
+xftfont Monospace:size=9
+xftalpha 0.8
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 3
+
+# border margins
+border_margin 9
+
+# border width
+border_width 10
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color gray
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 10
+gap_y 10
+
+# stuff after 'TEXT' will be formatted on screen
+
+TEXT
+${color white}$alignc$sysname $kernel on $machine
+${color white}$alignc${exec whoami} @ $nodename
+${color orange}INFORMATION ${hr 2}${color 000000}
+${color 000000}Date: ${color white}${time %A,%d %B}
+${color 000000}Time: ${color white}${time %k:%M:%S}${alignr}${color 000000}Uptime: ${color white}$uptime
+
+${color orange}CPU ${hr 2}${color 000000}
+Freq:${color white} ${freq}MHz ${alignr}${color 000000}Load:${color white} ${loadavg}${color 000000}
+${color white}$cpubar
+${cpugraph 000000 FCD116}
+${color 000000}NAME             PID       CPU%      MEM%${color white}
+${top name 1} ${top pid 1}   ${top cpu 1}    ${top mem 1}
+${top name 2} ${top pid 2}   ${top cpu 2}    ${top mem 2}
+${top name 3} ${top pid 3}   ${top cpu 3}    ${top mem 3}
+${top name 4} ${top pid 4}   ${top cpu 4}    ${top mem 4}
+${top name 5} ${top pid 5}   ${top cpu 5}    ${top mem 5}
+${top name 6} ${top pid 6}   ${top cpu 6}    ${top mem 6}
+${top name 7} ${top pid 7}   ${top cpu 7}    ${top mem 7}
+${top name 8} ${top pid 8}   ${top cpu 8}    ${top mem 8}
+${top name 9} ${top pid 9}   ${top cpu 9}    ${top mem 9}
+${top name 10} ${top pid 10}   ${top cpu 10}    ${top mem 10}
+
+${color orange}MEMORY ${hr 2}${color 000000}
+RAM:${color white}   $memperc%   ${color white}${membar 6}${color 000000}
+Swap:${color white}  $swapperc%   ${color white}${swapbar 6}${color 000000}
+
+${color orange}DISK ${hr 2}${color 000000}
+Linux   (${fs_size /})${color white} ${fs_bar 6 /}${color 000000}
+Windows (${fs_size /media/windows})${color white}  ${fs_bar 6 /media/windows}${color 000000}
+Storage (${fs_size /media/storage})${color white} ${fs_bar 6 /media/storage}${color 000000}
+Web     (${fs_size /media/web})${color white}  ${fs_bar 6 /media/web}${color 000000}
+
+${color orange}NETWORK (${addr eth0}) ${hr 2}${color 000000}
+Down:${color white} ${downspeed eth0} k/s ${alignr}${color 000000}Up:${color white} ${upspeed eth0} k/s${color 000000}
+${downspeedgraph eth0 25,140 000000 ff0000} ${alignr}${upspeedgraph eth0 25,140 000000 00ff00}${color 000000}
+Total:${color white} ${totaldown eth0} ${alignr}${color 000000}Total:${color white} ${totalup eth0}${color 000000}
+Inbound:${color white} ${tcp_portmon 1 32767 count} ${color 000000}Outbound:${color white} ${tcp_portmon 32768 61000 count}${alignr}${color 000000}Total:${color white} ${tcp_portmon 1 65535 count}${color 000000}
+« Create a list of installed packagesWhat is detroit.app.Application? »
