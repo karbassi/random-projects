@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Idle Timer</title>
+  <script src="http://code.jquery.com/jquery-latest.pack.js"></script>
+  <script src="idle.js"></script>
+  <style type="text/css" media="screen">
+    body{width:750px;padding:0.5em;margin:1em auto;background-color:#2C3233;color:#F4F4F4;font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;border: 1px solid #999;}
+    p { line-height: 1.5em; }
+    a { color: #CBDDC8;}
+    h1, h2{text-align:center;}
+    h2 { margin: 0.5em;}
+    div.box{width:330px;margin:1em;float:left;}
+    div.box div{width:330px;height:100px;margin:0; padding: 5px;overflow:auto;border:1px solid #FFFFFF;}
+  </style>
+</head>
+<body>
+  <h1><a href="../">Javascript</a>: Idle Timer</h1>
+  <p>Knowing the idle time can be very useful. Idle time here is defined as the last time the user moved the mouse or pressed a key. One can use this to auto-save, auto-upload, etc.</p>
+  <div class="box">
+    <h2>Mouse Event Called</h2>
+    <div id="mouse-called"></div>
+  </div>
+  
+  <div class="box">
+    <h2>Mouse Event Loaded</h2>
+    <div id="mouse-loaded"></div>
+  </div>
+  
+  <div class="box">
+    <h2>Keyboard Event Called</h2>
+    <div id="keyboard-called"></div>
+  </div>
+  
+  <div class="box">
+    <h2>Keyboard Event Loaded</h2>
+    <div id="keyboard-loaded"></div>
+  </div>
+  
+  <br style="clear:both;">
+  
+</body>
+</html>
