@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Entities</title>
+  <title>HTML Entities</title>
   <style type="text/css" media="screen">
     ul { list-style-type:none; }
     li { width:200px; margin:15px 0 0 0; line-height:10px; float:left; }
